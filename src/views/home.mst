@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, shirink-to-fit=no"  />
+        <title>Basic Server em NodeJS</title>
+        <link rel="stylesheet" href="" />
+    </head>
+    <body>
+        <h1>Seja Bem vindo(a) {{name}}</h1>
+        <p>Qualquer mensagem nesse parágrafo</p>
+        {{#mostrar}}
+            <p>Esse parágrafo só aparecerá se a variável mostrar for true</p>
+        {{/mostrar}}
+        <ol>
+            {{#ingredientes}}
+                <li>{{nome}} - {{qde}}</li>
+            {{/ingredientes}}
+        </ol>
+    </body>
+</html>
