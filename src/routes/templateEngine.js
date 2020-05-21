@@ -18,7 +18,9 @@ router.get('/templateengine', (req, res)=>{
             {nome:"Arroz", qde:"1 xícara"},
             {nome:"Azeite ou óleo", qde:"5 ml"},
             {nome:"Sal", qde:"a gosto"}
-        ]
+        ],
+        interesses:['Nodejs', 'React', 'React Native'],
+        html_inject:'<strong>Elemento html renderizado aqui</strong> '
     };
     //res.render(TEMPLATE_NAME, JSON_DATA)
     res.render('home', obj); //response utilizando a engine

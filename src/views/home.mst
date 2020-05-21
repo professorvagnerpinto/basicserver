@@ -6,15 +6,27 @@
         <link rel="stylesheet" href="" />
     </head>
     <body>
-        <h1>Seja Bem vindo(a) {{name}}</h1>
+        {{> header}} {{!Esse header veio de partials}}
         <p>Qualquer mensagem nesse parágrafo</p>
         {{#mostrar}}
             <p>Esse parágrafo só aparecerá se a variável mostrar for true</p>
         {{/mostrar}}
+        <hr/>
         <ol>
             {{#ingredientes}}
                 <li>{{nome}} - {{qde}}</li>
             {{/ingredientes}}
         </ol>
+        {{^ingredientes}} {{!o ^ verifica se a lista está vazia}}
+            <p>Não há ingredientes cadastrados.</p>
+        {{/ingredientes}}
+        <hr/>
+        <ul>
+            {{#interesses}}
+                <li>{{.}}</li>
+            {{/interesses}}
+        </ul>
+        <hr/>
+        {{{html_inject}}}
     </body>
 </html>
