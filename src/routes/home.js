@@ -9,11 +9,13 @@
 const express = require('express');
 const homeController = require('../controllers/homeController');
 const templateEngineController = require('../controllers/templateEngineController');
+const loginController = require('../controllers/loginController');
 
 //Cria as rotas
 const router = express.Router();
-router.get('/', homeController.index);
-router.get('/templateengine', templateEngineController.index);
+router.get('/', homeController.userMiddleware, homeController.index); //se usa um middleware, tem que acrescentá-lo antes do controller
+router.get('/templateengine', homeController.userMiddleware, templateEngineController.index); //reutilizando o middleware
+router.get('/login', loginController.index);
 
 /*
     Trecho de código para demonstrar como tratar diferentes tipos de url na requisição.

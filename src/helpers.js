@@ -11,7 +11,7 @@ exports.defaultPageTitle = 'Basic Server em NodeJS (helper)';
 //só para demonstrar que menus, se globais, podem ser centralizados no helper
 exports.menu = [
     {name:'Home', slug:'/'},
-    {name:'Sobre', slug:'/sobre'},
+    {name:'Login', slug:'/login'},
     {name:'Contato', slug:'/contato'},
     {name:'Template Engine', slug:'/templateengine'}
 ];

@@ -7,7 +7,8 @@
 
 exports.index = (req, res)=>{
     let obj = {
-        name: "Ana",
+        //name: "Ana", //deixou de ser estático
+        userInfo:req.userInfo, //agora o nome do usuário vem do middleware
         pageTitle:'Basic Server em NodeJS', //retire isso para ver o helper em ação
         mostrar: false,
         ingredientes:[

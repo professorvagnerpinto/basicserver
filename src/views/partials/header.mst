@@ -1,2 +1,2 @@
-<h1>Oi, {{name}}</h1>
+<h1>Oi, {{userInfo.name}}</h1>
 <hr/>

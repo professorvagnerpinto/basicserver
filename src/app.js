@@ -13,12 +13,12 @@ const helpers = require('./helpers'); //helpers do site
 
 //configura o servidor
 const app = express();
-app.use((req, res, next)=>{
+app.use((req, res, next)=>{ //todos os uses são middlewares globais (atuam em todas as requisições, por isso, global)
     res.locals.h = helpers; //vira uma variável global para os templates
     next(); //pega as informações e manda para o template
 }); //o helper deve vir antes da definição de rota
-app.use('/', router); //trata das requisições na raiz do servidor, conforme as configurações no arquivo ./routes/home.js
 app.use(express.json()) //habilita para requisições do tipo POST e PUT (com informações no  corpo da requisição)
+app.use('/', router); //(mantenha como o último use) trata das requisições na raiz do servidor, conforme as configurações no arquivo ./routes/home.js
 app.engine('mst', mustache(__dirname + '/views/partials', '.mst')); //registra a extensão .mst como mustache-express engine
 app.set('view engine', 'mst'); //diz que a view engine do app virá da engine
 app.set('views', __dirname + '/views'); //diz onde estão as views no projeto (os arquivos .mst)
