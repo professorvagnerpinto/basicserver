@@ -12,28 +12,6 @@
     </head>
     <body>
         {{> header}} {{!Esse header veio de partials}}
-        <p>Qualquer mensagem nesse parágrafo</p>
-        {{#mostrar}} {{!o # é equivalente a um if}}
-            <p>Esse parágrafo só aparecerá se a variável mostrar for true</p>
-        {{/mostrar}}
-        <hr/>
-        <ol>
-            {{#ingredientes}}
-                <li>{{nome}} - {{qde}}</li>
-            {{/ingredientes}}
-        </ol>
-        {{^ingredientes}} {{!o ^ verifica se a lista está vazia}}
-            <p>Não há ingredientes cadastrados.</p>
-        {{/ingredientes}}
-        <hr/>
-        <ul>
-            {{#interesses}}
-                <li>{{.}}</li>
-            {{/interesses}}
-        </ul>
-        <hr/>
-        {{{html_inject}}}
-        <hr/>
         <ul>
             {{#h.menu}} {{!isso foi criado no helper}}
                 <li><a href="{{slug}}" >{{name}}</a></li>

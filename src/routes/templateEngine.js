@@ -7,26 +7,11 @@
 
 //adiciona a dependência
 const express = require('express');
+const templateEngineController = require('../controllers/templateEngineController');
 
 //Cria as rotas
 const router = express.Router();
-router.get('/templateengine', (req, res)=>{
-    let obj = {
-
-        name: "Ana",
-        mostrar: false,
-        ingredientes:[
-            {nome:"Arroz", qde:"1 xícara"},
-            {nome:"Azeite ou óleo", qde:"5 ml"},
-            {nome:"Sal", qde:"a gosto"}
-        ],
-        interesses:['Nodejs', 'React', 'React Native'],
-        html_inject:'<strong>Elemento html renderizado aqui</strong> '
-    };
-    //res.render(TEMPLATE_NAME, JSON_DATA)
-    res.render('home', obj); //response utilizando a engine
-    //res.send('Rota com Mustache configurada'); //para testar apenas a rota
-});
+router.get('/templateengine', templateEngineController.index);
 
 //exporta a const
 module.exports = router;

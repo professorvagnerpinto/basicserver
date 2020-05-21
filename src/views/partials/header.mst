@@ -1,2 +1,2 @@
-<h1>Seja Bem vindo(a) {{name}}</h1>
+<h1>Oi, {{name}}</h1>
 <hr/>
