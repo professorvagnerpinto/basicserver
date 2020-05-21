@@ -2,13 +2,18 @@
 <html lang="pt-BR">
     <head>
         <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, shirink-to-fit=no"  />
-        <title>Basic Server em NodeJS</title>
+        {{#pageTitle}}
+            <title>{{pageTitle}}</title>
+        {{/pageTitle}}
+        {{^pageTitle}}
+            <title>{{h.defaultPageTitle}}</title>
+        {{/pageTitle}}
         <link rel="stylesheet" href="" />
     </head>
     <body>
         {{> header}} {{!Esse header veio de partials}}
         <p>Qualquer mensagem nesse parágrafo</p>
-        {{#mostrar}}
+        {{#mostrar}} {{!o # é equivalente a um if}}
             <p>Esse parágrafo só aparecerá se a variável mostrar for true</p>
         {{/mostrar}}
         <hr/>
@@ -28,5 +33,11 @@
         </ul>
         <hr/>
         {{{html_inject}}}
+        <hr/>
+        <ul>
+            {{#h.menu}} {{!isso foi criado no helper}}
+                <li><a href="{{slug}}" >{{name}}</a></li>
+            {{/h.menu}}
+        </ul>
     </body>
 </html>
