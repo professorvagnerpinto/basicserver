@@ -1,2 +1,16 @@
 <h1>Oi, {{name}}</h1>
 <hr/>
+{{#flashes}}
+    {{#success}}
+        <div>{{.}}</div>
+        <hr/>
+    {{/success}}
+    {{#error}}
+        <div>{{.}}</div>
+        <hr/>
+    {{/error}}
+    {{#info}}
+        <div>{{.}}</div>
+        <hr/>
+    {{/info}}
+{{/flashes}}
