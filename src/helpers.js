@@ -6,12 +6,13 @@
  */
 
 //título da página (se não for inserido pelo controller ele entra em ação, desde que isso esteja na view)
-exports.defaultPageTitle = 'Basic Server em NodeJS (helper)';
+exports.defaultPageTitle = 'Basic Server em NodeJS';
 
 //só para demonstrar que menus, se globais, podem ser centralizados no helper
 exports.menu = [
     {name:'Home', slug:'/'},
     {name:'Login', slug:'/login'},
+    {name:'Adicionar Post', slug:'/post/add'},
     {name:'Contato', slug:'/contato'},
     {name:'Template Engine', slug:'/templateengine'}
 ];

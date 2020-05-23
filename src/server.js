@@ -5,16 +5,21 @@
  * by: Vagner Pinto
  */
 
-//adiciona a dependência
-const app = require('./app');
-
-//seta as variáveis de ambiente
+//variáveis de ambiente
 require('dotenv').config({path:'variables.env'});
 
-//seta a porta do server
-app.set('port', process.env.PORT || 3000);
+//banco de dados
+const mongoose = require('mongoose');
+mongoose.connect(process.env.DATABASE, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.Promise = global.Promise;
+mongoose.connection.on('error', (error)=>{
+    console.error('Erro em server.js: ' + error.message);
+});
+require('./models/Post'); //carrega os models
 
-//inicializa o servidor
-const server = app.listen(app.get('port'), ()=>{
+//server
+const app = require('./app');
+app.set('port', process.env.PORT || 3000); //seta a porta do server
+const server = app.listen(app.get('port'), ()=>{ //inicializa o servidor
     console.log('Servidor inicializado na porta ' + server.address().port);
 });

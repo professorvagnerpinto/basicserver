@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"  />
+    {{#pageTitle}}
+        <title>{{pageTitle}}</title>
+    {{/pageTitle}}
+    {{^pageTitle}}
+        <title>{{h.defaultPageTitle}}</title>
+    {{/pageTitle}}
+    <link rel="stylesheet" href="" />
+</head>
+    <body>
+        <p>Página não encontrada - Erro 404</p>
+    </body>
+</html>

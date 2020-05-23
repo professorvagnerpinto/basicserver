@@ -17,5 +17,24 @@
                 <li><a href="{{slug}}" >{{name}}</a></li>
             {{/h.menu}}
         </ul>
+        <hr/>
+        <h2>Adicionar Post</h2>
+        <form method="POST">
+            <label>
+                Título:
+                <input type="text" name="title"/>
+            </label>
+            <br/><br/>
+            <label>
+                Corpo:
+                <TextArea name="body"></TextArea>
+            </label>
+            <br/><br/>
+            <label>
+                Tags:
+            </label>
+            <br/><br/>
+            <input type="submit" value="Salvar"/>
+        </form>
     </body>
 </html>
